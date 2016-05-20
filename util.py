@@ -7,7 +7,9 @@ def get_s(url):
     req = urllib2.urlopen(url)
     return {
         "code" : req.getcode(),
-        "response" : req.read()
+        "response" : req.read(),
+        "url":url,
+        "method" : "GET",
     }
 
 # headers should be like this: [('User-agent', 'Mozilla/5.0'),('key':'value')]
@@ -17,7 +19,9 @@ def get_h(url,headers):
     req = opener.open(url)
     return {
         "code" : req.getcode(),
-        "response" : req.read()
+        "response" : req.read(),
+        "url":url,
+        "method" : "GET",
     }
 
 #querys should be like this{"key":"value","key":"value"}
@@ -32,7 +36,9 @@ def post_s(url,data):
     req = urllib2.urlopen(urllib2.Request(url,dat))
     return {
         "code" : req.getcode(),
-        "response" : req.read()
+        "response" : req.read(),
+        "url":url,
+        "method" : "POST",
     }
 
 

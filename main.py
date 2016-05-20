@@ -1,0 +1,3 @@
+import attack
+
+attack.attack()
